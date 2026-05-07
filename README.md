@@ -4,6 +4,14 @@ How to add a Kyocera ECOSYS PA4500x as a network printer in CUPS on Linux, with 
 
 This guide is written around the **PA4500x** but the same approach works for other Kyocera ECOSYS / FS / TASKalfa devices that speak KPDL.
 
+## Tested on
+
+- **Printer:** Kyocera ECOSYS PA4500x (B&W LED, 45 ppm, network model)
+- **Firmware:** `2025.10.29 C0T_S000.005.114`
+- **Reported languages** (from `@PJL INFO CONFIG`): `LINEP`, `IBMPRO`, `ESCP`, `PCL`, `PCLXL`, `KPDL`
+- **Print server:** Ubuntu 22.04.5 LTS, CUPS 2.4.1
+- **Transport:** raw socket on TCP/9100 (`socket://<ip>:9100`)
+
 ## Why this guide exists
 
 If you add a Kyocera ECOSYS to CUPS using the **Generic PostScript** PPD (`drv:///sample.drv/generic.ppd`) over a raw socket (`socket://<ip>:9100`), the printer happily eats the job and the page counter increments — but what comes out of the tray is the literal PostScript source:
